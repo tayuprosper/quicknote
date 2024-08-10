@@ -1,0 +1,16 @@
+{% extends "head.html" %}
+{% block content %}
+<div class="form-f">
+    <form method="post" class="flex flex-col items-center">
+    {% csrf_token %}
+    <label for="note_title">Note Title</label>
+    {{ form.note_title }} <br>
+    <label for="notesContent">Text Content</label>
+    {{ form.notesContent }}
+    <input class="bg-blue-700 text-white p-2 rounded-lg font-bold" type="submit" value="Save Note">
+</div>
+
+{% endblock %}
+
+
+

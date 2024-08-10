@@ -1,0 +1,36 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f6d3e01bef.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static '/index.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Your Notes</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <div class="nav">
+            <a href="{% url 'Logout' %}" class="link-underline-light h-full">
+                <button class="bg-black text-white p-2 rounded-lg font-bold">LOGOUT</button>
+            </a>  
+    </div>
+    {% endif %}
+    {% if messages %}
+    {% for message in messages %}
+    <h1>{{ message.tags }}</h1>
+    <p>{{ message.message }}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+<script src="{% static '/index.js' %}"></script>
+</html>

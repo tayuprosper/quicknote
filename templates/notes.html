@@ -1,0 +1,47 @@
+{% extends "head.html" %}
+{% block content %}
+    {% if notes %}
+    <div class="notes">
+        {% for note in notes %}
+        <div class="note">
+            <div class="note-head">
+                {% if note.note_title|length > 25 %}
+                <h5>{{ note.note_title|slice:"23" }}...</h5>
+                {% else %}
+                <h5>{{ note.note_title }}</h5>
+                {% endif %}
+
+                <p class="date">{{ note.date_created|date:"m-d h:ma" }}</p>
+            </div>
+           
+            {% if note.notesContent|length > 300 %}
+            <p>{{ note.notesContent|slice:"300" }}...
+                <span>See more</span></p>
+            {% else %}
+            <p>{{ note.notesContent }}</p>
+                {% endif %}
+                <div class="inte-sec">
+                    <div>
+                        <button><a href="{% url 'Edit' note.id %}">EDIT NOTE</a></button>
+                        <button><a href="{% url 'ViewNote' note.id %}">VIEW NOTE</a></button> 
+                    </div>
+                   
+
+                    <div class="sec-fav">
+                        {% if note.is_fav %}
+                        <i class="fa-solid fa-heart fa-xl" onclick="set_fav(`{% url 'SetFav' note.id %}`,`{{ csrf_token }}`,this) "></i>
+                        {% else %}
+                        <i class="fa-regular fa-heart fa-xl" onclick="set_fav(`{% url 'SetFav' note.id %}`,`{{ csrf_token }}`, this)"></i>
+                        {% endif %}
+                    </div>   
+                </div>
+             </div>
+          {% endfor %}
+          <button><a href="{% url 'Create' %}">ADD NEW NOTE</a></button>
+    </div>
+  
+    {% endif %}
+
+    
+   
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "head.html" %}
+{% block content %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    <div class="m-auto flex justify-center items-center flex-col h-screen w-[65vw] max-w-[70vw] bg-white">
+    <h1 class="font-bold text-3xl m-4">Welcome To Notes App</h1>
+    <p class="text-center w-[40vw]">This is a simple note application for you to create a secure notes for yourself and also serve as backup. very easy to use</p>
+    <h3 class="font-bold text-2xl m-4">GET STARTED</h3>
+    {%if user.is_authenticated %}
+    <a href="{% url 'Notes' %}"><button class="bg-black font-bold text-white p-2 m-4">SEE YOUR NOTES</button></a>
+    {% else %}
+    <div>
+        <a href="{% url 'Login' %}"><button class="bg-black font-bold text-white p-2 m-4">LOG IN</button></a>
+        <a href="{%  url 'Signup' %}"><button class="bg-black font-bold text-white p-2 m-4">SIGN UP</button></a>    
+    </div>
+    
+    {% endif %}
+</div>
+{% endblock %}
