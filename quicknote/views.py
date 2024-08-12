@@ -24,7 +24,7 @@ def Login(req):
                 login(req,user)
                 return redirect("Notes")
             else: 
-                message = "invalid credentials"
+                message = "invalid credentials please recheck"
                 form = AuthenticationForm()
                 return render(req,"auth.html",{'form': form, 'message' : message})
     else:  
