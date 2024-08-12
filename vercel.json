@@ -2,13 +2,13 @@
     "version": 2,
     "functions": {
       "api/**/*.py": {
-        "runtime": "@vercel/python"
+        "runtime": "python3.9"
       }
     },
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "myapp/wsgi.py"
+        "dest": "notes/wsgi.py"
       }
     ]
   }
