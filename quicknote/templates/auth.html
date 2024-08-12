@@ -1,0 +1,22 @@
+{% extends 'head.html' %}
+{% block content %}
+     {% if form.errors %}
+    <p>{{ form.errors }}</p>
+    {% endif %}
+    <div class="m-auto h-screen flex ">
+        <form method="post"class="rounded-lg">
+            {% csrf_token %}
+            {% if auth_type == "signup" %}
+            <h1 class="font-bold text-2xl mt-5">SIGN UP</h1>
+           {{ form.as_p }}
+            <input type="submit" value="Signup">
+            {% else %}
+            <h1 class="font-bold mt-5 text-2xl">LOG IN</h1>
+            {{ form.as_p }}
+            
+            <input type="submit" value="login">
+            {% endif%}
+        </form>
+    </div>
+    
+{% endblock %}

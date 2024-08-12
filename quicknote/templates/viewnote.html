@@ -1,0 +1,11 @@
+{% extends "head.html" %}
+
+{% block content %}
+<div class="view-note flex flex-col">
+    <h5 class="p-3 font-bold rounded-lg m-4">{{ note.note_title }}</h5>
+    <p class="bg-white p-3 font-bold rounded-lg m-4">{{ note.notesContent }}</p>
+    <a href="{% url 'Edit' note.id %}" class="h-full"><button class="bg-black font-bold text-white p-3">EDIT NOTE</button> </a>
+</div>
+
+
+{% endblock %}

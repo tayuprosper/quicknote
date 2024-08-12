@@ -1,0 +1,146 @@
+body{
+    background-color: rgb(234, 234, 234);
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+button{
+    margin: 5px;
+}
+.nav{
+    background-color: aliceblue;
+    padding: 10px;
+}
+input[type="submit"]{
+    margin: 20px;
+}
+button, input[type="submit"]{
+    background-color: black;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+input[type="text"], input[type="email"], input[type="password"]{
+    width: 60vw;
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: 5vh;
+    padding-left: 10px;
+}
+input:focus, textarea{
+    outline: none;
+
+}
+textarea{
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: 60vh;
+    width: 60vw;
+    padding: 2em;
+    margin-bottom: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.form-f{
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+form{
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: auto;
+}
+.notes{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.note{
+    width: 85%;
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.note p{
+    margin: 5px;
+}
+h5{
+    font-size: 1em;
+    margin: 0;
+}
+label{
+    font-weight: bold;
+    margin: 10px;
+}
+span{
+    color: grey;
+}
+
+span:hover{
+    cursor: pointer;
+}
+
+.inte-sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fa-heart, .fa-regular, .fa-solid{
+    cursor: pointer;
+}
+
+.date{
+    color: rgb(104, 103, 103);
+}
+.note-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.errorlist{
+    margin: 5px;
+}
+ul{
+    font-weight: bold;
+    background-color: red;
+    border-radius: 6px;
+    list-style-type: none;
+    padding: 5px;
+}
+li{
+    list-style-type: none;
+    color: white;
+}
+
+.view-note{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.view-note h5{
+    background-color: white;
+}
+form p{
+    margin: 20px;
+}
+
+.helptext{
+    display: none;
+}
+form ul{
+    display: none;
+}
